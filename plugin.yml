@@ -1,0 +1,35 @@
+name: LoupGarouUHC
+version: 2.0
+author: Hugo Simony
+main: fr.hugosimony.lguhc.Main
+commands:
+  host:
+    description: Commande pour récupérer l'item de configuration
+  say:
+    description: Commande pour parler en tant que host
+  role:
+    description: Commande pour connaître son rôle
+  roles:
+    description: Commande pour connaître les rôles de la partie
+  claim:
+    description: Récupérer les items de son rôle
+  tir:
+    description: Commande du tir final du chasseur
+  couple:
+    description: Commande de couple du cupidon
+  infect:
+    description: Commande d'infection de l'IPDL
+  sauver:
+    description: Commande de sauvetage de la sorcière
+  maitre:
+    description: Commande de maître de l'enfant sauvage
+  flairer:
+    description: Commande de flair du renard
+  proteger:
+    description: Commande de protection du salvateur
+  voir:
+    description: Commande de voyance de la voyante
+  vote:
+    description: Commande de vote
+  lgt:
+    description: Commande pour parler avec les loups
