@@ -120,22 +120,25 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new Damage(this), this);
 		
 		// Commandes :
-		getCommand("host").setExecutor(new Host(this));
-		getCommand("say").setExecutor(new Host(this));
 		
-		getCommand("role").setExecutor(new Roles(this));
-		getCommand("roles").setExecutor(new Roles(this));
-		getCommand("claim").setExecutor(new Roles(this));
-		getCommand("tir").setExecutor(new Roles(this));
-		getCommand("couple").setExecutor(new Roles(this));
-		getCommand("infect").setExecutor(new Roles(this));
-		getCommand("sauver").setExecutor(new Roles(this));
-		getCommand("maitre").setExecutor(new Roles(this));
-		getCommand("flairer").setExecutor(new Roles(this));
-		getCommand("proteger").setExecutor(new Roles(this));
-		getCommand("voir").setExecutor(new Roles(this));
-		getCommand("vote").setExecutor(new Roles(this));
-		getCommand("lgt").setExecutor(new Roles(this));
+		Host host = new Host(this);
+		getCommand("host").setExecutor(host);
+		getCommand("say").setExecutor(host);
+		
+		Roles roles = new Roles(this);
+		getCommand("role").setExecutor(roles);
+		getCommand("roles").setExecutor(roles);
+		getCommand("claim").setExecutor(roles);
+		getCommand("tir").setExecutor(roles);
+		getCommand("couple").setExecutor(roles);
+		getCommand("infect").setExecutor(roles);
+		getCommand("sauver").setExecutor(roles);
+		getCommand("maitre").setExecutor(roles);
+		getCommand("flairer").setExecutor(roles);
+		getCommand("proteger").setExecutor(roles);
+		getCommand("voir").setExecutor(roles);
+		getCommand("vote").setExecutor(roles);
+		getCommand("lgt").setExecutor(roles);
 	}
 	
 	@Override
