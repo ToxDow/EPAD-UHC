@@ -108,15 +108,15 @@ public class StartingTimer extends BukkitRunnable {
 	
 	static void Teleportations(Main main) {
 		int current = 0; 
-		int time = 60; //temps (en tics) entre chaque tp
-		int distance = main.border_size/5; //distance entre chaque joueurs
+		int time = 30; //temps (en tics) entre chaque tp
+		int distance = main.border_size/4; //distance entre chaque joueurs
 		int x = main.border_size - main.border_size/5;
 		int z = x;
 		for(Player p: main.Ingame) {
 			org.bukkit.entity.Player player = p.getPlayer();
 			createPlateforms(current, main, player, x, 200, z);
 			current+=time;
-			if(x-distance>=main.border_size/5-main.border_size)
+			if(x-distance>=distance-main.border_size)
 				x-=distance;
 			else {
 				x = main.border_size - main.border_size/5;
@@ -132,6 +132,7 @@ public class StartingTimer extends BukkitRunnable {
 					player.getWorld().getBlockAt(i, 200, j).setType(Material.BARRIER);
 			}
 			try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
+			Bukkit.broadcastMessage("§a[UHC] §9Téléportation de §6" + player.getName() + "§9.");
 			player.teleport(new Location(main.world, x, 205, z));
 			player.addPotionEffect(effects.slowness);
 			player.addPotionEffect(effects.jump_boost);

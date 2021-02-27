@@ -189,17 +189,19 @@ public class Main extends JavaPlugin {
 	
 	public Player findPlayer(org.bukkit.entity.Player player) {
 		
-		Player p = new Player(player, this);
+		Player p = null;
 		for(Player player_: Ingame) {
-			if(player_.getName().equalsIgnoreCase(player.getName()))
+			if(player_.getName().equalsIgnoreCase(player.getName())) {
+				player_.setPlayer(player);
 				p = player_;
+			}
 		}
 		return p;
 	}
 	
 	public Player findPlayerFromUsername(String s) {
 		
-		Player p = new Player(Ingame.get(0).getPlayer(), this); // Initialiser à un joueur différent (grâce au "new")
+		Player p = null;
 		for(Player player: Ingame) {
 			if(player.getName().equalsIgnoreCase(s))
 				p = player;

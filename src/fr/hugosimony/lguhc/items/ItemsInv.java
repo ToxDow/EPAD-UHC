@@ -306,7 +306,7 @@ public class ItemsInv {
 		// Cycle Jour/Nuit
 		ItemMeta day_nightM = day_night.getItemMeta();
 		day_nightM.setDisplayName("§aCycle Jour/Nuit");
-		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes", "pour un jour ou une nuit"));
+		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes", "§9pour un jour ou une nuit"));
 		day_night.setItemMeta(day_nightM);
 		// Rôles
 		ItemMeta role_timeM = role_time.getItemMeta();
@@ -690,7 +690,7 @@ public class ItemsInv {
 		if(main.cycle_jn + i >= 3)
 			main.cycle_jn += i;
 		ItemMeta day_nightM = day_night.getItemMeta();
-		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes", "pour un jour ou une nuit"));
+		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes", "§9pour un jour ou une nuit"));
 		day_night.setItemMeta(day_nightM);
 		return day_night;
 	}

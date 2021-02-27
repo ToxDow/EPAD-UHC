@@ -45,6 +45,11 @@ public class Player{
 		return player;
 	}
 	
+	// Setter du player
+	public void setPlayer(org.bukkit.entity.Player player) {
+		this.player = player;
+	}
+	
 	// Rôle du joueur (Getter and Setter)
 	private Role role;
 	public Role getRole() {

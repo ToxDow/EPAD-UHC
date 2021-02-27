@@ -22,7 +22,7 @@ public class GlobalTimer extends BukkitRunnable {
 	private int day_time;
 	private int role_time; 
 	private int pvp_time;
-	private int vote_time = 120;
+	private int vote_time = 90;
 	private int border_time;
 	
 	ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
@@ -111,10 +111,6 @@ public class GlobalTimer extends BukkitRunnable {
 					player_.getPlayer().removePotionEffect(PotionEffectType.DAMAGE_RESISTANCE);
 			}
 			
-			for(fr.hugosimony.lguhc.player.Player player: main.Ingame) {
-				player.setCanVote(true);
-				player.setVote(0);
-			}
 			if(main.player_vote != null)
 				main.player_vote.getPlayer().setMaxHealth(main.player_vote.getPlayer().getMaxHealth()*2);
 			
@@ -145,8 +141,13 @@ public class GlobalTimer extends BukkitRunnable {
 		//**********************************************************************
 		
 		// Vote
-		if(timer%(day_time+vote_time) == 0 && nb_day > 2) 
+		if(timer%(day_time+vote_time) == 0 && nb_day > 2) {
 			Bukkit.broadcastMessage("§4[LG] §9Le jour est levé ! C'est le moment de voter contre le joueur que vous voulez grâce à la commande §6/vote (pseudo) §9!");
+			for(fr.hugosimony.lguhc.player.Player player: main.Ingame) {
+				player.setCanVote(false);
+				player.setVote(0);
+			}
+		}
 		if(timer%(day_time+vote_time+60) == 0&& nb_day > 2) {
 			Bukkit.broadcastMessage("§4[LG] §9La période de vote est terminée !");
 			int more_vote = 0;

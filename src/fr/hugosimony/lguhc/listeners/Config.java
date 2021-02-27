@@ -272,7 +272,7 @@ public class Config implements Listener{
 			}
 			event.setCancelled(true);
 			//**********************************************************************
-		}else if(event.getInventory().getItem(4).isSimilar(items_inv.contours_role)) {
+		}else if(event.getInventory().getItem(4) != null && event.getInventory().getItem(4).isSimilar(items_inv.contours_role)) {
 			
 			if(event.getCurrentItem().isSimilar(items_inv.valider)) {
 				player.closeInventory();
