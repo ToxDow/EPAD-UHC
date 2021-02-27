@@ -144,7 +144,7 @@ public class GlobalTimer extends BukkitRunnable {
 		if(timer%(day_time+vote_time) == 0 && nb_day > 2) {
 			Bukkit.broadcastMessage("§4[LG] §9Le jour est levé ! C'est le moment de voter contre le joueur que vous voulez grâce à la commande §6/vote (pseudo) §9!");
 			for(fr.hugosimony.lguhc.player.Player player: main.Ingame) {
-				player.setCanVote(false);
+				player.setCanVote(true);
 				player.setVote(0);
 			}
 		}
