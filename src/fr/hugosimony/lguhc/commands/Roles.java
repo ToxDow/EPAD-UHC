@@ -214,9 +214,11 @@ public class Roles implements CommandExecutor{
 												victim.setMechant(true);
 												victim.setInfect(true);
 												p.setCanInfect(false);
-												victim.getPlayer().sendMessage("§4[LG] §9Vous vous êtes fait infecté ! Vous devez désormais gagner avec le clan des loups !");
 												main.newLoup(victim);
+												//TODO Gérer le cas où le joueur s'est déconnecté
 												main.respawn(victim);
+												victim.getPlayer().sendMessage("§4[LG] §9Vous vous êtes fait infecté ! Vous devez désormais gagner avec le clan des loups !");
+												player.sendMessage("§4[LG] §9Vous avez bien infecté §6" + victim.getName() + "§9 !");
 											}else
 												player.sendMessage("§4[LG] §cCe joueur ne peut pas être infecté !");
 										}else
@@ -245,8 +247,10 @@ public class Roles implements CommandExecutor{
 												victim.setSosoRespawnable(false);
 												victim.setDying(false);
 												p.setRevive(false);
-												player.sendMessage("§4[LG] §9Vous avez bien sauvé §6" + victim.getName() + "§9 !");
+												//TODO Gérer le cas où le joueur s'est déconnecté
 												main.respawn(victim);
+												victim.getPlayer().sendMessage("§4[LG] §9Vous vous êtes fait sauver par la sorcière ! Vous revenez in extremis à la vie !");
+												player.sendMessage("§4[LG] §9Vous avez bien sauvé §6" + victim.getName() + "§9 !");
 											}else
 												player.sendMessage("§4[LG] §cCe joueur ne peut pas être sauvé !");
 										}else

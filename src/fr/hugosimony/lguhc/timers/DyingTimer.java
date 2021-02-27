@@ -46,6 +46,7 @@ public class DyingTimer extends BukkitRunnable{
 		if(timer == ancien_time && player.getRole() == Role.ANCIEN && !player.hasAncienRespawn()) {
 			player.setAncienRespawn(true);
 			player.setDying(false);
+			//TODO Gérer le cas où le joueur s'est déconnecté
 			main.respawn(player);
 			player.getPlayer().sendMessage("§4[LG] §9Votre expérience vous permet de trouver un passage secret et de ne pas mourrir ! Désormais, "
 					+ "vous n'avez plus de seconde chance !");
@@ -83,6 +84,7 @@ public class DyingTimer extends BukkitRunnable{
 		if(timer == death_time && player.isDying()) {
 			player.setSosoRespawnable(false);
 			//Kill le joueur
+			//TODO Gérer le cas où le joueur s'est déconnecté
 			player.getPlayer().teleport(player.death_location);
 			Bukkit.dispatchCommand(console, "kill " + player.getName());
 			player.setDying(false);
