@@ -222,7 +222,7 @@ public class ItemsInv {
 		// NoFood
 		ItemMeta noFoodM = noFood.getItemMeta();
 		noFoodM.setDisplayName("§9No food");
-		noFoodM.setLore(Arrays.asList("§aActivé\n(Les joueurs ne perdront pas de nourriture !)"));
+		noFoodM.setLore(Arrays.asList("§aActivé","(Les joueurs n'auront pas", "besoin de nourriture)"));
 		noFoodM.addEnchant(Enchantment.DURABILITY, 1, true);
 		noFoodM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		noFood.setItemMeta(noFoodM);
@@ -235,7 +235,7 @@ public class ItemsInv {
 		// NoFall
 		ItemMeta noFallM = noFall.getItemMeta();
 		noFallM.setDisplayName("§9No fall");
-		noFallM.setLore(Arrays.asList("§aActivé\n(Les joueurs ne prendront pas de dégats de chute !)"));
+		noFallM.setLore(Arrays.asList("§aActivé","(Les joueurs ne prendront pas", "de dégats de chute)"));
 		noFallM.addEnchant(Enchantment.DURABILITY, 1, true);
 		noFallM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		noFall.setItemMeta(noFallM);
@@ -248,7 +248,7 @@ public class ItemsInv {
 		// NoFire
 		ItemMeta noFireM = noFire.getItemMeta();
 		noFireM.setDisplayName("§9No fire");
-		noFireM.setLore(Arrays.asList("§aActivé\n(Les joueurs ne prendront pas de dégats de feu !)"));
+		noFireM.setLore(Arrays.asList("§aActivé","(Les joueurs ne prendront pas", "de dégats de feu)"));
 		noFireM.addEnchant(Enchantment.DURABILITY, 1, true);
 		noFireM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		noFire.setItemMeta(noFireM);
@@ -261,7 +261,7 @@ public class ItemsInv {
 		// DiamondLimit
 		ItemMeta diamondLimitM = diamondLimit.getItemMeta();
 		diamondLimitM.setDisplayName("§9Diamond Limit");
-		diamondLimitM.setLore(Arrays.asList("§aActivé\n(Les joueurs ne pourront miner que " + main.diamondLimitMax + " diamants !"));
+		diamondLimitM.setLore(Arrays.asList("§aActivé", "(Les joueurs ne pourront miner", "que " + main.diamondLimitMax + " diamants)"));
 		diamondLimitM.addEnchant(Enchantment.DURABILITY, 1, true);
 		diamondLimitM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		diamondLimit.setItemMeta(diamondLimitM);

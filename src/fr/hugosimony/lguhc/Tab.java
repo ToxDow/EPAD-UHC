@@ -4,8 +4,6 @@ import java.lang.reflect.Field;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import fr.hugosimony.lguhc.Main;
-
 public class Tab {
 	
 	static String head = "  §c§m------------------------§r  \n"
