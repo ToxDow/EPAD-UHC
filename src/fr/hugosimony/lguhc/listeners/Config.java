@@ -280,10 +280,10 @@ public class Config implements Listener{
 			}else if(event.getCurrentItem().isSimilar(items_inv.plus)) {
 				if(main.countRoles() < main.maxPlayer)
 					main.plusMoinsRoles(1, event.getInventory().getName());
-				items_inv.reloadRoles();
+				event.getInventory().setItem((event.getInventory().getSize()+1)/2-1, items_inv.reloadRoles(event.getInventory().getName()));
 			}else if(event.getCurrentItem().isSimilar(items_inv.moins)) {
 				main.plusMoinsRoles(-1, event.getInventory().getName());
-				items_inv.reloadRoles();
+				event.getInventory().setItem((event.getInventory().getSize()+1)/2-1, items_inv.reloadRoles(event.getInventory().getName()));
 			}
 			event.setCancelled(true);
 			//**********************************************************************

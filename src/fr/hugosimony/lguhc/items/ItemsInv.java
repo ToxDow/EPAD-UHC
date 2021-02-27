@@ -222,7 +222,7 @@ public class ItemsInv {
 		// NoFood
 		ItemMeta noFoodM = noFood.getItemMeta();
 		noFoodM.setDisplayName("§9No food");
-		noFoodM.setLore(Arrays.asList("§aActivé","(Les joueurs n'auront pas", "besoin de nourriture)"));
+		noFoodM.setLore(Arrays.asList("§aActivé", "(Les joueurs n'auront pas", "besoin de nourriture)"));
 		noFoodM.addEnchant(Enchantment.DURABILITY, 1, true);
 		noFoodM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		noFood.setItemMeta(noFoodM);
@@ -235,7 +235,7 @@ public class ItemsInv {
 		// NoFall
 		ItemMeta noFallM = noFall.getItemMeta();
 		noFallM.setDisplayName("§9No fall");
-		noFallM.setLore(Arrays.asList("§aActivé","(Les joueurs ne prendront pas", "de dégats de chute)"));
+		noFallM.setLore(Arrays.asList("§aActivé", "(Les joueurs ne prendront pas", "de dégats de chute)"));
 		noFallM.addEnchant(Enchantment.DURABILITY, 1, true);
 		noFallM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		noFall.setItemMeta(noFallM);
@@ -248,7 +248,7 @@ public class ItemsInv {
 		// NoFire
 		ItemMeta noFireM = noFire.getItemMeta();
 		noFireM.setDisplayName("§9No fire");
-		noFireM.setLore(Arrays.asList("§aActivé","(Les joueurs ne prendront pas", "de dégats de feu)"));
+		noFireM.setLore(Arrays.asList("§aActivé", "(Les joueurs ne prendront pas", "de dégats de feu)"));
 		noFireM.addEnchant(Enchantment.DURABILITY, 1, true);
 		noFireM.addItemFlags(ItemFlag.HIDE_ENCHANTS);
 		noFire.setItemMeta(noFireM);
@@ -306,7 +306,7 @@ public class ItemsInv {
 		// Cycle Jour/Nuit
 		ItemMeta day_nightM = day_night.getItemMeta();
 		day_nightM.setDisplayName("§aCycle Jour/Nuit");
-		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes pour un jour ou une nuit"));
+		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes", "pour un jour ou une nuit"));
 		day_night.setItemMeta(day_nightM);
 		// Rôles
 		ItemMeta role_timeM = role_time.getItemMeta();
@@ -399,7 +399,7 @@ public class ItemsInv {
 		voyante.setItemMeta(voyanteM);
 		//VPL
 		ItemMeta vplM = vpl.getItemMeta();
-		vplM.setDisplayName("§cVilan Petit Loup");
+		vplM.setDisplayName("§cVilain Petit Loup");
 		vpl.setItemMeta(vplM);
 		
 		//**********************************************************************
@@ -499,7 +499,7 @@ public class ItemsInv {
 		diamondM.setLore(Arrays.asList("§aActivé : " + main.diamondLimitMax));
 		diamond.setItemMeta(diamondM);
 		ItemMeta diamondLimitM = diamondLimit.getItemMeta();
-		diamondLimitM.setLore(Arrays.asList("§aActivé\n(Les joueurs ne pourront miner que " + main.diamondLimitMax + " diamants !"));
+		diamondLimitM.setLore(Arrays.asList("§aActivé", "(Les joueurs ne pourront miner", "que " + main.diamondLimitMax + " diamants)"));
 		diamondLimit.setItemMeta(diamondLimitM);
 		return diamond;
 	}
@@ -690,7 +690,7 @@ public class ItemsInv {
 		if(main.cycle_jn + i >= 3)
 			main.cycle_jn += i;
 		ItemMeta day_nightM = day_night.getItemMeta();
-		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes pour un jour ou une nuit"));
+		day_nightM.setLore(Arrays.asList("§9Actuellement : " + main.cycle_jn + " minutes", "pour un jour ou une nuit"));
 		day_night.setItemMeta(day_nightM);
 		return day_night;
 	}
@@ -735,7 +735,7 @@ public class ItemsInv {
 	//**********************************************************************
 	
 	public Inventory InvAllRoles(Player player) {
-		reloadRoles();
+		reloadRoles("");
 		int size = 45;
 		Inventory inv_roles = Bukkit.createInventory(player, size, "§4§oRôles");
 		//************************************
@@ -801,7 +801,7 @@ public class ItemsInv {
 	
 	//**********************************************************************
 	
-	public void reloadRoles() {
+	public ItemStack reloadRoles(String role) {
 		//Ancien
 		ItemMeta ancienM = ancien.getItemMeta();
 		if(main.ancienC != 0)
@@ -809,6 +809,8 @@ public class ItemsInv {
 		else
 			ancienM.setLore(Arrays.asList("§cDésactivé"));
 		ancien.setItemMeta(ancienM);
+		if(role.equals("§9Ancien"))
+			return ancien;
 		//Assassin
 		ItemMeta assassinM = assassin.getItemMeta();
 		if(main.assassinC != 0)
@@ -816,6 +818,8 @@ public class ItemsInv {
 		else
 			assassinM.setLore(Arrays.asList("§cDésactivé"));
 		assassin.setItemMeta(assassinM);
+		if(role.equals("§6Assassin"))
+			return assassin;
 		//Chasseur
 		ItemMeta chasseurM = chasseur.getItemMeta();
 		if(main.chasseurC != 0)
@@ -823,6 +827,8 @@ public class ItemsInv {
 		else
 			chasseurM.setLore(Arrays.asList("§cDésactivé"));
 		chasseur.setItemMeta(chasseurM);
+		if(role.equals("§9Chasseur"))
+			return chasseur;
 		//Cupidon
 		ItemMeta cupidonM = cupidon.getItemMeta();
 		if(main.cupidonC != 0)
@@ -830,6 +836,8 @@ public class ItemsInv {
 		else
 			cupidonM.setLore(Arrays.asList("§cDésactivé"));
 		cupidon.setItemMeta(cupidonM);
+		if(role.equals("§dCupidon"))
+			return cupidon;
 		//Détective
 		ItemMeta detectiveM = detective.getItemMeta();
 		if(main.detectiveC != 0)
@@ -837,6 +845,8 @@ public class ItemsInv {
 		else
 			detectiveM.setLore(Arrays.asList("§cDésactivé"));
 		detective.setItemMeta(detectiveM);
+		if(role.equals("§9Détective"))
+			return detective;
 		//Enfant Sauvage
 		ItemMeta enfant_sauvageM = enfant_sauvage.getItemMeta();
 		if(main.enfant_sauvageC != 0)
@@ -844,6 +854,8 @@ public class ItemsInv {
 		else
 			enfant_sauvageM.setLore(Arrays.asList("§cDésactivé"));
 		enfant_sauvage.setItemMeta(enfant_sauvageM);
+		if(role.equals("§2Enfant Sauvage"))
+			return enfant_sauvage;
 		//IPDL
 		ItemMeta ipdlM = ipdl.getItemMeta();
 		if(main.ipdlC != 0)
@@ -851,6 +863,8 @@ public class ItemsInv {
 		else
 			ipdlM.setLore(Arrays.asList("§cDésactivé"));
 		ipdl.setItemMeta(ipdlM);
+		if(role.equals("§cIPDL"))
+			return ipdl;
 		//LG
 		ItemMeta lgM = lg.getItemMeta();
 		if(main.lgC != 0)
@@ -858,6 +872,8 @@ public class ItemsInv {
 		else
 			lgM.setLore(Arrays.asList("§cDésactivé"));
 		lg.setItemMeta(lgM);
+		if(role.equals("§cLoup Garou"))
+			return lg;
 		//LG Amnésique
 		ItemMeta lg_amneM = lg_amne.getItemMeta();
 		if(main.lg_amneC != 0)
@@ -865,6 +881,8 @@ public class ItemsInv {
 		else
 			lg_amneM.setLore(Arrays.asList("§cDésactivé"));
 		lg_amne.setItemMeta(lg_amneM);
+		if(role.equals("§cLoup Garou Amnésique"))
+			return lg_amne;
 		//LG Anonyme
 		ItemMeta lg_anoM = lg_ano.getItemMeta();
 		if(main.lg_anoC != 0)
@@ -872,6 +890,8 @@ public class ItemsInv {
 		else
 			lg_anoM.setLore(Arrays.asList("§cDésactivé"));
 		lg_ano.setItemMeta(lg_anoM);
+		if(role.equals("§cLoup Garou Anonyme"))
+			return lg_ano;
 		//LGB
 		ItemMeta lgbM = lgb.getItemMeta();
 		if(main.lgbC != 0)
@@ -879,6 +899,8 @@ public class ItemsInv {
 		else
 			lgbM.setLore(Arrays.asList("§cDésactivé"));
 		lgb.setItemMeta(lgbM);
+		if(role.equals("§4Loup Garou Blanc"))
+			return lgb;
 		//Parano
 		ItemMeta paranoM = parano.getItemMeta();
 		if(main.paranoC != 0)
@@ -886,6 +908,8 @@ public class ItemsInv {
 		else
 			paranoM.setLore(Arrays.asList("§cDésactivé"));
 		parano.setItemMeta(paranoM);
+		if(role.equals("§9Parano"))
+			return parano;
 		//PF
 		ItemMeta pfM = pf.getItemMeta();
 		if(main.pfC != 0)
@@ -893,6 +917,8 @@ public class ItemsInv {
 		else
 			pfM.setLore(Arrays.asList("§cDésactivé"));
 		pf.setItemMeta(pfM);
+		if(role.equals("§9Petite Fille"))
+			return pf;
 		//Renard
 		ItemMeta renardM = renard.getItemMeta();
 		if(main.renardC != 0)
@@ -900,6 +926,8 @@ public class ItemsInv {
 		else
 			renardM.setLore(Arrays.asList("§cDésactivé"));
 		renard.setItemMeta(renardM);
+		if(role.equals("§9Renard"))
+			return renard;
 		//Salva
 		ItemMeta salvaM = salva.getItemMeta();
 		if(main.salvaC != 0)
@@ -907,6 +935,8 @@ public class ItemsInv {
 		else
 			salvaM.setLore(Arrays.asList("§cDésactivé"));
 		salva.setItemMeta(salvaM);
+		if(role.equals("§9Salvateur"))
+			return salva;
 		//Soeur
 		ItemMeta soeurM = soeur.getItemMeta();
 		if(main.soeurC != 0)
@@ -914,6 +944,8 @@ public class ItemsInv {
 		else
 			soeurM.setLore(Arrays.asList("§cDésactivé"));
 		soeur.setItemMeta(soeurM);
+		if(role.equals("§9Soeur"))
+			return soeur;
 		//Sorcière
 		ItemMeta sorciereM = sorciere.getItemMeta();
 		if(main.sorciereC != 0)
@@ -921,6 +953,8 @@ public class ItemsInv {
 		else
 			sorciereM.setLore(Arrays.asList("§cDésactivé"));
 		sorciere.setItemMeta(sorciereM);
+		if(role.equals("§9Sorcière"))
+			return sorciere;
 		//SV
 		ItemMeta svM = sv.getItemMeta();
 		if(main.svC != 0)
@@ -928,6 +962,8 @@ public class ItemsInv {
 		else
 			svM.setLore(Arrays.asList("§cDésactivé"));
 		sv.setItemMeta(svM);
+		if(role.equals("§9Simple Villageois"))
+			return sv;
 		//Voleur
 		ItemMeta voleurM = voleur.getItemMeta();
 		if(main.voleurC != 0)
@@ -935,6 +971,8 @@ public class ItemsInv {
 		else
 			voleurM.setLore(Arrays.asList("§cDésactivé"));
 		voleur.setItemMeta(voleurM);
+		if(role.equals("§6Voleur"))
+			return voleur;
 		//Voyante
 		ItemMeta voyanteM = voyante.getItemMeta();
 		if(main.voyanteC != 0)
@@ -942,6 +980,8 @@ public class ItemsInv {
 		else
 			voyanteM.setLore(Arrays.asList("§cDésactivé"));
 		voyante.setItemMeta(voyanteM);
+		if(role.equals("§9Voyante"))
+			return voyante;
 		//VPL
 		ItemMeta vplM = vpl.getItemMeta();
 		if(main.vplC != 0)
@@ -949,7 +989,9 @@ public class ItemsInv {
 		else
 			vplM.setLore(Arrays.asList("§cDésactivé"));
 		vpl.setItemMeta(vplM);
-			
+		if(role.equals("§cVilain Petit Loup"))
+			return vpl;
+		return null;
 	}
 	
 	//**********************************************************************

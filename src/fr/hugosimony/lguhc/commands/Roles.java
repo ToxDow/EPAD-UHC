@@ -156,7 +156,7 @@ public class Roles implements CommandExecutor{
 							}else
 								player.sendMessage("§4[LG] §cVous n'êtes pas mort !");
 						}else
-							player.sendMessage("§4[LG] §cVous n'êtes pas le chasseur !");
+							player.sendMessage("§4[LG] §cVous n'êtes pas le Chasseur !");
 					}
 					
 					//**********************************************************************

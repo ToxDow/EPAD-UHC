@@ -308,7 +308,7 @@ public class Main extends JavaPlugin {
 			voleurC += x;
 		else if (name == "§9Voyante" && !(voyanteC == 0 && x == -1))
 			voyanteC += x;
-		else if (name == "§cVilan Petit Loup" && !(vplC == 0 && x == -1))
+		else if (name == "§cVilain Petit Loup" && !(vplC == 0 && x == -1))
 			vplC += x;
 	}
 	
