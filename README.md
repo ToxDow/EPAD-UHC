@@ -1,3 +1,2 @@
-# LG-UHC
-Plugin Minecraft d'un Loup Garou UHC
-Version 2.0
+# EPAD-UHC
+Test de création d'un nouveau plugin d'uhc par des débutants
